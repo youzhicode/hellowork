@@ -1,0 +1,326 @@
+/* ========== CSS 变量 ========== */
+:root {
+    --bg: #F9F6F0;
+    --bg-card: #FDFCFA;
+    --bg-soft: #F3EFE8;
+    --bg-hover: #F8F6F0;
+    --text: #3D3A35;
+    --text-secondary: #5A5550;
+    --text-muted: #B8B0A5;
+    --text-light: #C5BCB0;
+    --text-lighter: #AFA89D;
+    --border: #E8E2D8;
+    --border-light: #D6CFC4;
+    --primary: #D4936B;
+    --primary-hover: #C4835B;
+    --btn-bg: #4A453F;
+    --btn-hover: #3D3A35;
+    --radius: 18px;
+    --radius-sm: 12px;
+    --radius-xs: 10px;
+    --radius-full: 30px;
+    --shadow: 0 24px 64px rgba(61, 58, 53, 0.1);
+    --transition: 0.25s ease;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --container: 820px;
+}
+
+/* ========== 全局重置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+/* ========== 顶部导航 ========== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 24px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text-lighter);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-links a.active {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.nav-links .btn-login,
+.nav-links .btn-logout {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 6px 20px;
+    border-radius: 24px;
+    font-size: 14px;
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.nav-links .btn-login:hover,
+.nav-links .btn-logout:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #F8F0EA;
+}
+
+/* ========== 底部标语 ========== */
+.footer-motto {
+    text-align: center;
+    padding: 40px 0 14px;
+    font-size: 13px;
+    color: var(--border-light);
+    letter-spacing: 0.5px;
+}
+
+.footer-motto span {
+    color: #E0D9D0;
+}
+
+/* ========== 登录弹窗 ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 58, 53, 0.2);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal-box {
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 40px 34px 34px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow);
+    position: relative;
+    margin: 20px;
+}
+
+.modal-box .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 22px;
+    color: var(--border-light);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    transition: color var(--transition);
+}
+
+.modal-box .close-btn:hover {
+    color: var(--text-lighter);
+}
+
+.modal-box h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.modal-box .sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.modal-box .form-group {
+    margin-bottom: 16px;
+}
+
+.modal-box .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-lighter);
+    margin-bottom: 4px;
+}
+
+.modal-box .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    background: var(--bg-card);
+    color: var(--text);
+}
+
+.modal-box .form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(212, 147, 107, 0.08);
+}
+
+.modal-box .btn-primary {
+    width: 100%;
+    padding: 13px;
+    background: var(--btn-bg);
+    color: var(--bg-card);
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background var(--transition);
+    margin-top: 4px;
+}
+
+.modal-box .btn-primary:hover {
+    background: var(--btn-hover);
+}
+
+.modal-box .switch-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.modal-box .switch-link a {
+    color: var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-box .switch-link a:hover {
+    text-decoration: underline;
+}
+
+.modal-box .guest-hint {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+/* ========== 复制按钮固定底部（首页输出卡片） ========== */
+.output-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.output-card .card-title {
+    flex-shrink: 0;
+}
+
+.output-card .card-sub {
+    flex-shrink: 0;
+}
+
+.output-card .card-body {
+    flex: 1;
+    min-height: 40px;
+}
+
+.output-card .btn-copy {
+    flex-shrink: 0;
+    margin-top: 14px;
+}
+
+/* ========== 复制按钮固定底部（个人中心版本卡片） ========== */
+.record-body .version-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.record-body .version-card .v-title {
+    flex-shrink: 0;
+}
+
+.record-body .version-card .v-sub {
+    flex-shrink: 0;
+}
+
+.record-body .version-card .v-content {
+    flex: 1;
+    min-height: 30px;
+}
+
+.record-body .version-card .btn-copy {
+    flex-shrink: 0;
+    margin-top: 12px;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 500px) {
+    .navbar {
+        padding: 14px 0 18px;
+    }
+    .nav-links {
+        gap: 14px;
+        font-size: 14px;
+    }
+    .modal-box {
+        padding: 28px 20px 24px;
+    }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关于 · 树懒</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <style>
+        .about-section {
+            padding: 48px 0 20px;
+        }
+        .about-section h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+        .about-section .sub {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            margin-bottom: 32px;
+        }
+        .about-section p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .about-section .quote {
+            background: var(--bg-soft);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 28px 0 32px;
+            font-size: 17px;
+            color: var(--text);
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .about-section .quote small {
+            display: block;
+            margin-top: 8px;
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .about-section .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 36px 0 32px;
+        }
+        .about-section .highlight {
+            background: var(--bg-soft);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 24px 0 20px;
+        }
+        .about-section .highlight p {
+            margin-bottom: 10px;
+        }
+        .about-section .highlight p:last-child {
+            margin-bottom: 0;
+        }
+        .contact-box {
+            background: var(--bg-soft);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-top: 32px;
+        }
+        .contact-box p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .contact-box .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding: 4px 0;
+        }
+        .contact-box .contact-item strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+        .contact-box .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .contact-box .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .contact-box .note {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 12px;
+        }
+
+        @media (max-width: 500px) {
+            .about-section h1 {
+                font-size: 24px;
+            }
+            .about-section .quote {
+                padding: 18px 20px;
+                font-size: 15px;
+            }
+            .contact-box {
+                padding: 18px 20px;
+            }
+            .about-section .highlight {
+                padding: 18px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== 顶部导航 ===== -->
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">🦥 树懒 · <span>替你写周报</span></a></div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html" class="active">关于</a>
+                <a href="profile.html">个人中心</a>
+                <button class="btn-login" id="loginBtn">登录</button>
+            </div>
+        </nav>
+
+        <!-- ===== 关于内容 ===== -->
+        <div class="about-section">
+
+            <h1>关于这个网站</h1>
+            <p class="sub">一个简单的小工具，希望能帮到你。</p>
+
+            <p>这是一个能帮你写周报的小工具。</p>
+            <p>没有什么特别的技术，只是一个简单的小工具。希望能够帮你解决写周报的烦恼。</p>
+
+            <p><strong>不需要付费，也不需要注册。</strong></p>
+            <p>不过，如果你注册了，可以给你提供更多的便利——比如在月末自动帮你生成月报。</p>
+            <p>这是一个免费的 AI 工具。如果你觉得好用，也愿意用，在经济允许的情况下给与支持就好。</p>
+
+            <div class="highlight">
+                <p><strong>关于打赏</strong></p>
+                <p>这个工具是免费的，但调用 AI 接口会产生 token 消耗。虽然单次成本不高，但如果用的人多了，对我来说也是一笔实实在在的开销。</p>
+                <p>如果你觉得这个工具帮到了你，在经济允许的情况下欢迎打赏支持。你的打赏会用来支付 API 费用，让这个工具能继续运转下去，帮到更多的人。</p>
+                <p>我不会把打赏的人做成排行榜，这里没有 VIP，所有人都是平等的。</p>
+
+                <p style="margin-top:16px;padding-top:16px;border-top:1px solid #E0D9D0;"><strong>关于隐私</strong></p>
+                <p>这个网站不会收集你的任何敏感信息。不登录，你的内容只留在你自己浏览器里；登录后，生成的汇报会保存在你的个人中心，方便你随时查看。</p>
+                <p>如果你注册了，个人中心里可以随时删除自己生成的内容。<strong>但删除是不可恢复的，没有后悔药</strong>——所以操作前请想清楚，确认好了再删。</p>
+
+                <p style="margin-top:16px;padding-top:16px;border-top:1px solid #E0D9D0;"><strong>如果你觉得这个工具还不错</strong><br />欢迎分享给身边有需要的朋友。多一个人看到，这个工具就多一份价值。</p>
+            </div>
+
+            <div class="quote">
+                🦥 我们都是打工人。<br />
+                这个网站的目的，就是为了帮到打工人。<br />
+                你的支持，也是在帮助打工人。
+                <small>—— 这个愿景，比排行榜更伟大。</small>
+            </div>
+
+            <hr class="divider" />
+
+            <p style="color:var(--text-muted); font-size:15px;">
+                祝你今天工作顺利，早点下班。
+            </p>
+
+            <div class="contact-box">
+                <p><strong>📮 联系我</strong></p>
+                <p>有任何建议、想法，或者用着哪里不舒服，都欢迎告诉我。</p>
+                <div class="contact-item">
+                    <strong>邮箱：</strong> <a href="mailto:你的邮箱@email.com">你的邮箱@email.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>微信：</strong> 你的微信号
+                </div>
+                <div class="note">💡 不会主动联系你，也不会推送任何内容。放心。</div>
+            </div>
+
+            <p style="text-align:right;color:var(--text-light);font-size:14px;margin-top:28px;">
+                by 一个普通开发者 @ 2026
+            </p>
+
+        </div>
+
+        <!-- ===== 底部 ===== -->
+        <div class="footer-motto">
+            🦥 慢慢来，不焦虑 · 不收费 · 不打扰
+            <span>·</span> 用着舒服就好
+        </div>
+
+    </div>
+
+    <!-- ===== 登录弹窗 ===== -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <button class="close-btn" id="modalCloseBtn">✕</button>
+            <h2 id="modalTitle">登录</h2>
+            <div class="sub" id="modalSub">登录后，你的周报记录将保存在云端</div>
+            <div id="loginPanel">
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" />
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" id="loginPassword" placeholder="至少8位" />
+                </div>
+                <button class="btn-primary" id="loginSubmitBtn">登录</button>
+                <div class="switch-link">
+                    还没账号？<a id="switchToRegister">去注册</a>
+                </div>
+                <div class="guest-hint">不登录也能正常使用所有功能</div>
+            </div>
+            <div id="registerPanel" style="display:none;">
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" id="registerEmail" placeholder="your@email.com" />
+                </div>
+                <div class="form-group">
+                    <label>密码（至少8位）</label>
+                    <input type="password" id="registerPassword" placeholder="至少8位" />
+                </div>
+                <div class="form-group">
+                    <label>重复密码</label>
+                    <input type="password" id="registerPasswordConfirm" placeholder="再次输入密码" />
+                </div>
+                <button class="btn-primary" id="registerSubmitBtn">注册</button>
+                <div class="switch-link">
+                    已有账号？<a id="switchToLogin">去登录</a>
+                </div>
+                <div class="guest-hint">💡 我们将发送确认邮件到你的邮箱</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+</body>
+</html>
