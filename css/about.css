@@ -1,0 +1,106 @@
+.about-section {
+    padding: 48px 0 20px;
+}
+.about-section h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+.about-section .sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 32px;
+}
+.about-section p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+.about-section .quote {
+    background: var(--bg-soft);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 28px 0 32px;
+    font-size: 17px;
+    color: var(--text);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.6;
+}
+.about-section .quote small {
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.about-section .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0 32px;
+}
+.about-section .highlight {
+    background: var(--bg-soft);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 24px 0 20px;
+}
+.about-section .highlight p {
+    margin-bottom: 10px;
+}
+.about-section .highlight p:last-child {
+    margin-bottom: 0;
+}
+.contact-box {
+    background: var(--bg-soft);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 32px;
+}
+.contact-box p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+.contact-box .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+}
+.contact-box .contact-item strong {
+    color: var(--text);
+    font-weight: 500;
+}
+.contact-box .contact-item a {
+    color: var(--primary);
+    text-decoration: none;
+}
+.contact-box .contact-item a:hover {
+    text-decoration: underline;
+}
+.contact-box .note {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 12px;
+}
+
+@media (max-width: 500px) {
+    .about-section h1 {
+        font-size: 24px;
+    }
+    .about-section .quote {
+        padding: 18px 20px;
+        font-size: 15px;
+    }
+    .contact-box {
+        padding: 18px 20px;
+    }
+    .about-section .highlight {
+        padding: 18px 20px;
+    }
+}

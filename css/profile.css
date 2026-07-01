@@ -1,0 +1,448 @@
+.profile-section {
+    padding: 40px 0 20px;
+}
+.profile-section h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+.profile-section .sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 32px;
+}
+
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+}
+.info-card .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+.info-card .field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--bg-soft);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.info-card .field:last-child {
+    border-bottom: none;
+}
+.info-card .field .label {
+    font-size: 14px;
+    color: var(--text-lighter);
+    min-width: 80px;
+}
+.info-card .field .value {
+    font-size: 15px;
+    color: var(--text);
+    flex: 1;
+}
+.info-card .field .value.placeholder {
+    color: var(--text-light);
+    font-style: italic;
+}
+.info-card .field .btn-edit {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+.info-card .field .btn-edit:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #F8F0EA;
+}
+.info-card .field .btn-save {
+    background: var(--btn-bg);
+    border: none;
+    padding: 4px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--bg-card);
+    cursor: pointer;
+    transition: background var(--transition);
+    font-family: inherit;
+}
+.info-card .field .btn-save:hover {
+    background: var(--btn-hover);
+}
+.info-card .field input {
+    padding: 6px 12px;
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-xs);
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--bg-card);
+    color: var(--text);
+    flex: 1;
+    min-width: 150px;
+    transition: border-color var(--transition);
+}
+.info-card .field input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+.info-card .field .role-options-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1;
+}
+.info-card .field .role-options-mini button {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+.info-card .field .role-options-mini button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.info-card .field .role-options-mini button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--bg-card);
+}
+
+.record-list {
+    margin-top: 4px;
+}
+.record-item {
+    border-bottom: 1px solid var(--bg-soft);
+}
+.record-item:last-child {
+    border-bottom: none;
+}
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 8px;
+    gap: 12px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transition: background var(--transition);
+    border-radius: 8px;
+}
+.record-header:hover {
+    background: var(--bg-hover);
+}
+.record-header .record-info {
+    flex: 1;
+    min-width: 120px;
+}
+.record-header .record-info .title {
+    font-size: 15px;
+    color: var(--text);
+}
+.record-header .record-info .meta {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+.record-header .record-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.record-header .record-actions .btn-delete {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+.record-header .record-actions .btn-delete:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #F8F0EA;
+}
+.record-header .record-actions .expand-icon {
+    font-size: 16px;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+    width: 24px;
+    text-align: center;
+    user-select: none;
+}
+.record-header .record-actions .expand-icon.open {
+    transform: rotate(180deg);
+}
+
+.record-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 8px;
+}
+.record-body.open {
+    max-height: 3000px;
+    padding: 8px 8px 20px 8px;
+}
+.record-body .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+@media (max-width: 700px) {
+    .record-body .body-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .record-body .version-card {
+        padding: 14px 16px;
+    }
+}
+.record-body .version-card {
+    background: var(--bg-hover);
+    border-radius: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+}
+.record-body .version-card .v-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+.record-body .version-card .v-sub {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+.record-body .version-card .v-content {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.record-body .version-card .btn-copy {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    padding: 4px 0;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+    width: 100%;
+    margin-top: 12px;
+}
+.record-body .version-card .btn-copy:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #F8F0EA;
+}
+.record-body .version-card .btn-copy.copied {
+    border-color: #A8B8A0;
+    color: #8AA08A;
+    background: #F2F5EF;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.pagination button {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: var(--text-lighter);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+.pagination button:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #F8F0EA;
+}
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.pagination button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--bg-card);
+}
+.pagination .page-info {
+    font-size: 13px;
+    color: var(--text-light);
+    padding: 0 8px;
+}
+
+.record-empty {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-light);
+    font-size: 15px;
+}
+.record-empty span {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.tab-bar {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-soft);
+    border-radius: 14px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+.tab-bar .tab-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-lighter);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+.tab-bar .tab-btn.active {
+    background: var(--bg-card);
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(61, 58, 53, 0.06);
+}
+.tab-bar .tab-btn:hover:not(.active) {
+    color: var(--text);
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+.login-prompt {
+    text-align: center;
+    padding: 60px 20px;
+}
+.login-prompt span {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+}
+.login-prompt h2 {
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.login-prompt p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+.login-prompt .btn-login {
+    background: var(--btn-bg);
+    color: var(--bg-card);
+    border: none;
+    padding: 12px 40px;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background var(--transition);
+}
+.login-prompt .btn-login:hover {
+    background: var(--btn-hover);
+}
+
+.modal-box .modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.modal-box .modal-actions button {
+    padding: 10px 32px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition);
+    border: none;
+}
+.modal-box .modal-actions .btn-confirm {
+    background: var(--primary);
+    color: var(--bg-card);
+}
+.modal-box .modal-actions .btn-confirm:hover {
+    background: var(--primary-hover);
+}
+.modal-box .modal-actions .btn-cancel {
+    background: var(--bg-soft);
+    color: var(--text-lighter);
+}
+.modal-box .modal-actions .btn-cancel:hover {
+    background: var(--border);
+}
+
+@media (max-width: 500px) {
+    .profile-section h1 {
+        font-size: 24px;
+    }
+    .info-card {
+        padding: 18px 16px;
+    }
+    .info-card .field {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .info-card .field .label {
+        min-width: auto;
+    }
+    .info-card .field input {
+        min-width: auto;
+    }
+    .record-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .record-header .record-actions {
+        justify-content: flex-start;
+    }
+    .tab-bar .tab-btn {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+}
